@@ -282,7 +282,7 @@ ax.set_title(
 dias_semana = ["lunes", "martes", "miércoles", "jueves", "viernes", "sábado", "domingo"]
 meses = ["enero", "febrero", "marzo", "abril", "mayo", "junio",
          "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
-ahora = datetime.now()
+ahora = datetime.now()- timedelta(hours=6)
 minuto_redondeado = (ahora.minute // 15) * 15
 fecha_redondeada = ahora.replace(minute=minuto_redondeado, second=0, microsecond=0)
 dia_semana = dias_semana[fecha_redondeada.weekday()]
@@ -337,4 +337,5 @@ ax.add_artist(ab2)
 ###############################################################################
 # Centrar gráfica en la página
 st.pyplot(fig, use_container_width=True)
+
 
