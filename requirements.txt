@@ -1,0 +1,10 @@
+streamlit
+streamlit-autorefresh
+geopandas
+matplotlib
+requests
+numpy
+scipy
+shapely
+pandas
+pytz
