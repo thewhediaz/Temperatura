@@ -68,7 +68,7 @@ with col2:
 # AUTOREFRESH: exactamente en cada cuarto de hora (00, 15, 30, 45)
 ahora = datetime.now()
 multiplo15 = (ahora.minute // 15) * 15
-objetivo = ahora.replace(minute=multiplo15, second=10, microsecond=0)
+objetivo = ahora.replace(minute=(multiplo15 + 1) % 60, second=10, microsecond=0)
 if ahora >= objetivo:
     objetivo += timedelta(minutes=15)
 delta = objetivo - ahora
@@ -337,5 +337,6 @@ ax.add_artist(ab2)
 ###############################################################################
 # Centrar gráfica en la página
 st.pyplot(fig, use_container_width=True)
+
 
 
